@@ -10,8 +10,8 @@ import base64
 from .constants import ABOUT_DATA
 
 
-@csrf_exempt
 def blur_image(request, car_id):
+    # write blur image code here.
     return JsonResponse({"error": "Invalid request"}, status=400)
 
 

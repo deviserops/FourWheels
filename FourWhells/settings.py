@@ -105,4 +105,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
-ALLOWED_HOSTS = ['www.google.com', 'localhost', '127.0.0.1']
+if os.getenv('ENV') == 'production':
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+else:
+    ALLOWED_HOSTS = ['*']
