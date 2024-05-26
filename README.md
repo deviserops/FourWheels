@@ -64,7 +64,7 @@ https://github.com/faisal-shehzad-dev/FourWheels.git
     python manage.py shell        #Open the db console
 ```
 
-## API Routes
+## API Reference
 The end point for APIs is at the given link.
 - [API Documentation](https://github.com/faisal-shehzad-dev/FourWheels/blob/main/docs/ROUTES.md)
 
