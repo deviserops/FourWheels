@@ -78,8 +78,7 @@ Pull requests are welcome.
 - Become a contributor.
 
 ## Contributors
-1. [Faisal Shehzad](https://github.com/faisalshehzaddev)
-2. [Faisal Shehzad](https://github.com/faisal-shehzad-dev)
+- [Click here to see the list of contributors.](https://github.com/faisal-shehzad-dev/FourWheels/graphs/contributors)
 
 ## License
 
