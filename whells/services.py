@@ -8,5 +8,5 @@ class ImageBlurService:
         self.car_id = car_id
         self.image_path = image_path
 
-    def apply_blue(self):
+    def apply_blur(self):
         pass
