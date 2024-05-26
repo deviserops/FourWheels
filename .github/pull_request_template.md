@@ -12,7 +12,7 @@
 
 ## Screenshots
 
->  If any screenshot is available then add.
+>  If any screenshot is available then add it.
 
 ## Merge Checklist
 
