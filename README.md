@@ -15,13 +15,13 @@ You must have the below-mentioned minimum requirements to start the project.
 
 Follow the following guidelines to install the project using command line.
 
-#### Libraries Installation:
+#### Libraries Installation
 ```bash
 pip install numpy
 pip install opencv-python
 pip install python-dotenv
 ```
-#### Database Installation:
+#### Database Installation
 Install DB according to your choice.
 ```bash
 pip install mysqlclient     #MySql
@@ -63,6 +63,10 @@ https://github.com/faisal-shehzad-dev/FourWheels.git
 ```bash
     python manage.py shell        #Open the db console
 ```
+
+## API Routes
+The end point for APIs is at the given link.
+- [API Documentation](https://github.com/faisal-shehzad-dev/FourWheels/blob/main/docs/ROUTES.md)
 
 ## Contributing
 Pull requests are welcome.
