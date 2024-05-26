@@ -74,6 +74,7 @@ Pull requests are welcome.
 - Follow the code style & flow.
 - Follow the PR guidelines.
 - Approve the PR then merge it.
+- Update the documentation & read me.
 - Become a contributor.
 
 
