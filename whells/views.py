@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Car
 from .serializers import CarSerializer
 import base64
+from .constants import ABOUT_DATA
 
 
 @csrf_exempt
@@ -16,6 +17,11 @@ def blur_image(request, car_id):
 
 def home(request):
     return render(request, "home.html")
+
+
+def about(request):
+    context = {"about_data": ABOUT_DATA}
+    return render(request, "about.html", context)
 
 
 def show_car(request, car_id):
