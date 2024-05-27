@@ -29,6 +29,8 @@ ROUTES = {
             "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/card_id/blur-image",
             "params": ["card_id", "same_image_name", "image_path"],
             "description": "from given image path, fetch image then blur and- store at the given location. ",
+            "success": ["message", "path", "file_name"],
+            "failure": ["error_message"],
             "authentication": "No",
         },
         {
@@ -36,6 +38,8 @@ ROUTES = {
             "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/card_id",
             "params": ["card_id"],
             "description": "Display the car details of the given car_id.",
+            "success": ["message", "all car attributes"],
+            "failure": ["error_message"],
             "authentication": "No",
         },
         {
@@ -43,6 +47,8 @@ ROUTES = {
             "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/create_car",
             "params": ["All car attributes"],
             "description": "Display the car details of the given car_id.",
+            "success": ["message", "all car attributes"],
+            "failure": ["error_message"],
             "authentication": "No",
         },
     ],
