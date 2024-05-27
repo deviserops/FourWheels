@@ -21,6 +21,15 @@ pip install Django==4.2.1
 pip install djangorestframework==3.14.0
 ```
 
+#### Version Checking
+Check the versions by running the following commands
+```bash
+python --version
+python3 -m django --version
+pip show djangorestframework
+
+```
+
 #### Libraries Installation
 ```bash
 pip install numpy

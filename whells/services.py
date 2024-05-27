@@ -3,24 +3,29 @@ import os
 import easyocr
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 
 class ImageBlurService:
     image_store_dir = os.getenv("IMAGE_STORE_DIR")
 
-    def __init__(self, car_id, image_path):
+    def __init__(self, car_id, image_path, same_image_name):
         self.car_id = car_id
         self.image_path = image_path
+        self.same_image_name = same_image_name
 
-    def _success_response(self, file_name, image_store_path):
+    def _success_response(self, new_file_name, image_store_path):
         return {
             "success": True,
             "message": f"Successfully saved to {image_store_path}",
             "path": image_store_path,
-            "file_name": f"{file_name[:-4]}_blurred.png",
+            "file_name": new_file_name,
         }
+
+    def _make_image_path(self, file_name):
+        name, ext = os.path.splitext(file_name)
+        new_file_name = f"{name}.png" if self.same_image_name else f"{name}_blurred.png"
+        return os.path.join(self.image_store_dir, new_file_name), new_file_name
 
     def apply_blur_effect(self):
         try:
@@ -56,13 +61,11 @@ class ImageBlurService:
             if not os.path.exists(ImageBlurService.image_store_dir):
                 os.makedirs(ImageBlurService.image_store_dir)
 
-            file_name = os.path.basename(self.image_path)
-            image_store_path = os.path.join(
-                ImageBlurService.image_store_dir, f"{file_name[:-4]}_blurred.png"
-            )
+            original_file_name = os.path.basename(self.image_path)
+            image_store_path, new_file_name = self._make_image_path(original_file_name)
             cv2.imwrite(image_store_path, img)
             print(f"Successfully saved to {image_store_path}")
-            return self._success_response(file_name, image_store_path)
+            return self._success_response(new_file_name, image_store_path)
 
         except Exception as e:
             return {"success": False, "error": f"Error applying blur to the image: {e}"}
