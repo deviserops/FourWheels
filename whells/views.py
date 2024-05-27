@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 
 from .models import Car
 from .serializers import CarSerializer
-from .constants import ABOUT_DATA
+from .constants import ABOUT_DATA, ROUTES
 from .services import ImageBlurService
 
 
@@ -19,6 +19,9 @@ def about(request):
     context = {"about_data": ABOUT_DATA}
     return render(request, "about.html", context)
 
+def routes(request):
+    context = {"routes": ROUTES}
+    return render(request, "routes.html", context)
 
 def show_car(request, car_id):
     try:

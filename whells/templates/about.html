@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -13,53 +12,59 @@
           <div class="col-md-10">
               <div class="profile-head">
                   <ul class="nav nav-tabs" id="myTab" role="tablist">
-                      <li class="nav-item">
-                          <a class="nav-link active" id="supervisor-tab" data-toggle="tab" href="#supervisor" role="tab" aria-controls="supervisor" aria-selected="true">Supervisor</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" id="student-tab" data-toggle="tab" href="#student" role="tab" aria-controls="student" aria-selected="false">Student</a>
-                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="supervisor-tab" data-toggle="tab" href="#supervisor" role="tab" aria-controls="supervisor" aria-selected="true">Supervisor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="student-tab" data-toggle="tab" href="#student" role="tab" aria-controls="student" aria-selected="false">Student</a>
+                    </li>
                   </ul>
               </div>
           </div>
       </div>
       <div class="row">
           <div class="col-md-8">
-              <div class="tab-content supervisor-tab" id="myTabContent">
-                  <div class="tab-pane fade show active" id="supervisor" role="tabpanel" aria-labelledby="supervisor-tab">
+              <div class="tab-content api_routes-tab" id="myTabContent">
+                  <div class="tab-pane fade show active" id="api_routes" role="tabpanel" aria-labelledby="api_routes-tab">
                     <div class="row">
                       {% for user in about_data %}
                         {% if user.role == "supervisor" %}
-                          <center>
-                            <div class="col-md-8">
-                              <p><strong>ID : {{ user.id }}</strong></p><br>
-                              <p><strong>Name : {{ user.name }}</strong></p><br>
-                              <p><strong>Role : {{ user.role }}</strong></p><br>
-                              <p><strong>Email : {{ user.email }}</strong></p><br>
-                              <p><strong>Info : {{ user.info }}</strong></p><br>
+                          <div class="col-md-12">
+                            <div class="card">
+                              <div class="card-body">
+                                <p><strong>ID : {{ user.id }}</strong></p>
+                                <p><strong>Name : {{ user.name }}</strong></p>
+                                <p><strong>Role : {{ user.role }}</strong></p>
+                                <p><strong>Email : {{ user.email }}</strong></p>
+                                <p><strong>Info : {{ user.info }}</strong></p>
+                              </div>
                             </div>
-                            <br><br>
-                          </center>
+                            <br>
+                          </div>
                         {% endif %}
                       {% endfor %}
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="student" role="tabpanel" aria-labelledby="student-tab">
+                  <div class="tab-pane fade" id="simple" role="tabpanel" aria-labelledby="simple-tab">
                     <div class="row">
-                      {% for user in about_data %}
+                      <div class="row">
+                        {% for user in about_data %}
                           {% if user.role == "student" %}
-                          <center>
-                            <div class="col-md-8">
-                              <p><strong>ID : {{ user.id }}</strong></p><br>
-                              <p><strong>Name : {{ user.name }}</strong></p><br>
-                              <p><strong>Role : {{ user.role }}</strong></p><br>
-                              <p><strong>Email : {{ user.email }}</strong></p><br>
-                              <p><strong>Info : {{ user.info }}</strong></p><br>
+                            <div class="col-md-12">
+                              <div class="card">
+                                <div class="card-body">
+                                  <p><strong>ID : {{ user.id }}</strong></p>
+                                  <p><strong>Name : {{ user.name }}</strong></p>
+                                  <p><strong>Role : {{ user.role }}</strong></p>
+                                  <p><strong>Email : {{ user.email }}</strong></p>
+                                  <p><strong>Info : {{ user.info }}</strong></p>
+                                </div>
+                              </div>
+                              <br>
                             </div>
-                            <br><br>
-                          </center>
                           {% endif %}
-                      {% endfor %}
+                        {% endfor %}
+                      </div>
                     </div>
                   </div>
               </div>
