@@ -41,7 +41,7 @@ ROUTES = {
         {
             "name": "Car Create",
             "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/create_car",
-            "params": ["card_id"],
+            "params": ["All car attributes"],
             "description": "Display the car details of the given car_id.",
             "authentication": "No",
         },
