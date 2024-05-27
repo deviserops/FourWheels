@@ -13,7 +13,13 @@ You must have the below-mentioned minimum requirements to start the project.
 
 ## Installation
 
-Follow the following guidelines to install the project using command line.
+Follow the following guidelines to install the project using the command line.
+
+#### Frameworks
+```bash
+pip install Django==4.2.1
+pip install djangorestframework==3.14.0
+```
 
 #### Libraries Installation
 ```bash
