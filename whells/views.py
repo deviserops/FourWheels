@@ -3,12 +3,9 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.decorators import api_view
-import numpy as np
-import cv2
 from django.views.decorators.csrf import csrf_exempt
 from .models import Car
 from .serializers import CarSerializer
-import base64
 from .constants import ABOUT_DATA
 from .services import ImageBlurService
 
