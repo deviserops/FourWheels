@@ -21,3 +21,58 @@ ABOUT_DATA = [
         "info": "GCU Faislabad",
     },
 ]
+
+ROUTES = {
+    "api": [
+        {
+            "name": "Image Blur",
+            "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/card_id/blur-image",
+            "params": ["card_id", "same_image_name", "image_path"],
+            "description": "from given image path, fetch image then blur and- store at the given location. ",
+            "success": ["message", "path", "file_name"],
+            "failure": ["error_message"],
+            "authentication": "No",
+        },
+        {
+            "name": "Car Show",
+            "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/card_id",
+            "params": ["card_id"],
+            "description": "Display the car details of the given car_id.",
+            "success": ["message", "all car attributes"],
+            "failure": ["error_message"],
+            "authentication": "No",
+        },
+        {
+            "name": "Car Create",
+            "end_point": "http://127.0.0.1:8001/api/v1/whells/cars/create_car",
+            "params": ["All car attributes"],
+            "description": "Display the car details of the given car_id.",
+            "success": ["message", "all car attributes"],
+            "failure": ["error_message"],
+            "authentication": "No",
+        },
+    ],
+    "simple": [
+        {
+            "name": "Home",
+            "end_point": "http://127.0.0.1:8001/",
+            "params": [],
+            "description": "Application homepage",
+            "authentication": "No",
+        },
+        {
+            "name": "About",
+            "end_point": "http://127.0.0.1:8001/about",
+            "params": [],
+            "description": "Showing about information.",
+            "authentication": "No",
+        },
+        {
+            "name": "Routes",
+            "end_point": "http://127.0.0.1:8001/routes",
+            "params": [],
+            "description": "List of routes in the application.",
+            "authentication": "No",
+        },
+    ],
+}

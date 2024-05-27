@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/routes.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container emp-profile">
+  <form method="post">
+      <div class="row">
+          <div class="col-md-10">
+              <div class="profile-head">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                          <a class="nav-link active" id="api_routes-tab" data-toggle="tab" href="#api_routes" role="tab" aria-controls="api_routes" aria-selected="true">API</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" id="simple-tab" data-toggle="tab" href="#simple" role="tab" aria-controls="simple" aria-selected="false">Simple</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+              <div class="tab-content api_routes-tab" id="myTabContent">
+                  <div class="tab-pane fade show active" id="api_routes" role="tabpanel" aria-labelledby="api_routes-tab">
+                    <div class="row">
+                      {% for route in routes.api %}
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <p><strong>Name:</strong> {{ route.name }}</p>
+                              <p><strong>End Point:</strong> {{ route.end_point }}</p>
+                              <p><strong>Params:</strong> {{ route.params|join:", " }}</p>
+                              <p><strong>Authentication:</strong> {{ route.authentication }}</p>
+                              <p><strong>Description:</strong> {{ route.description }}</p>
+                              <p><strong>Success:</strong> {{ route.success|join:", " }}</p>
+                              <p><strong>Failure:</strong> {{ route.failure|join:", " }}</p>
+                            </div>
+                          </div>
+                          <br>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="simple" role="tabpanel" aria-labelledby="simple-tab">
+                    <div class="row">
+                      {% for route in routes.simple %}
+                        <div class="col-md-12">
+                          <div class="card">
+                            <div class="card-body">
+                              <p><strong>Name:</strong> {{ route.name }}</p>
+                              <p><strong>End Point:</strong> {{ route.end_point }}</p>
+                              <p><strong>Params:</strong> {{ route.params|join:", " }}</p>
+                              <p><strong>Authentication:</strong> {{ route.authentication }}</p>
+                              <p><strong>Description:</strong> {{ route.description }}</p>
+                            </div>
+                          </div>
+                          <br>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+{% endblock %}
