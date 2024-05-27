@@ -55,17 +55,12 @@ def blur_image(request, car_id):
         try:
             request_data = json.loads(request.body)
             image_path = request_data.get("image_path")
-            if not image_path:
-                return JsonResponse(
-                    {"error": "image_path is required and cannot be empty"}, status=400
-                )
-            ImageBlurService(car_id, image_path)
-        except json.JSONDecodeError:
-            return JsonResponse(
-                {"error": "Invalid JSON format in request body"}, status=400
-            )
-        except AttributeError as e:
-            return JsonResponse({"error": f"Attribute error: {e}"}, status=400)
+            obj = ImageBlurService(car_id, image_path)
+            result = obj.apply_blur_effect()
+
+            return JsonResponse(result, status=200 if result["success"] else 400)
+        except Exception as e:
+            print(f"Exception: {e}")
+            return JsonResponse({"error": f"Error: {e}"}, status=400)
     else:
-        return JsonResponse({"error": "Method not allowed"}, status=405)
-    return JsonResponse({"error": "Invalid Request"}, status=404)
+        return JsonResponse({"error": "Only post method is allowed."}, status=405)

@@ -9,7 +9,7 @@ You must have the below-mentioned minimum requirements to start the project.
 - **Django**: 4.2.1
 - **Django Rest Framework**: 3.14.0
 - **Database**: MySql || Postgresql
-- **Libraries**: python-dotenv, numpy, opencv-python, easyocr, matplotlib
+- **Libraries**: python-dotenv, numpy, opencv-python, easyocr
 
 ## Installation
 
@@ -27,7 +27,6 @@ pip install numpy
 pip install opencv-python
 pip install python-dotenv
 pip install easyocr
-pip install matplotlib
 ```
 #### Database Installation
 Install DB according to your choice.
